@@ -30,8 +30,11 @@ export function EmptyState({ title, body }: { title: string; body: string }) {
 
 export function CardSkeleton() {
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" aria-hidden>
-      {Array.from({ length: 6 }, (_, i) => (
+    <div
+      className="vehicle-grid"
+      aria-hidden
+    >
+      {Array.from({ length: 10 }, (_, i) => (
         <div key={i} className="h-20 animate-pulse rounded bg-line/70" />
       ))}
     </div>

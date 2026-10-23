@@ -36,15 +36,21 @@ export default function App() {
 
   return (
     <div className="min-h-svh">
-      <header className="bg-tj text-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
-          <div>
-            <p className="text-xs uppercase tracking-[0.18em] text-white/80">Transjakarta</p>
-            <h1 className="text-xl font-semibold tracking-tight sm:text-2xl">Fleet Board</h1>
+      <header className="border-b border-line bg-white">
+        <div className="flex w-full items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3">
+            <img
+              src="/tj-icon.png"
+              alt="Transjakarta"
+              className="h-12 w-12 object-contain sm:h-14 sm:w-14"
+            />
+            <div>
+              <h1 className="text-xl font-semibold tracking-tight text-ink sm:text-2xl">Boscotan Fleet Board</h1>
+            </div>
           </div>
-          <p className="flex items-center gap-2 text-xs sm:text-sm">
+          <p className="flex items-center gap-2 text-xs text-muted sm:text-sm">
             <span
-              className={`h-2 w-2 rounded-full ${list.isFetching ? 'bg-amber-300' : 'bg-emerald-300'}`}
+              className={`h-2 w-2 rounded-full ${list.isFetching ? 'bg-amber-500' : 'bg-emerald-600'}`}
               aria-hidden
             />
             {list.isFetching ? 'Updating' : 'Live'}
@@ -52,7 +58,7 @@ export default function App() {
         </div>
       </header>
 
-      <main className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6">
+      <main className="flex w-full flex-col gap-4 px-4 py-6 sm:px-6 lg:px-8">
         <p className="text-sm text-muted">
           Live vehicle positions from the MBTA v3 API. Filters and page live in the URL.
         </p>

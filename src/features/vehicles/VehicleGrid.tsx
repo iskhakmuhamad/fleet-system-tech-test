@@ -10,7 +10,7 @@ type Props = {
 export function VehicleGrid({ items, stale, onOpen }: Props) {
   return (
     <div
-      className={`grid gap-3 sm:grid-cols-2 lg:grid-cols-3 ${stale ? 'opacity-70' : ''}`}
+      className={`vehicle-grid ${stale ? 'opacity-70' : ''}`}
       aria-busy={stale}
     >
       {items.map((v) => (
