@@ -1,4 +1,4 @@
-const BASE = 'https://api-v3.mbta.com'
+const BASE = import.meta.env.VITE_MBTA_API_BASE
 
 export class MbtaError extends Error {
   status: number
