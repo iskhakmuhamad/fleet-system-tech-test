@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Optional: copy `.env.example` to `.env` and set `VITE_MBTA_API_KEY` if you hit HTTP 429.
+Copy `.env.example` to `.env`. `VITE_MBTA_API_BASE` is the API origin (`https://api-v3.mbta.com`). Set `VITE_MBTA_API_KEY` if you hit HTTP 429.
 
 ```bash
 npm test
@@ -18,7 +18,7 @@ npm run build
 
 ## Architecture
 
-This is one page. Filter and pagination state live in the URL (`page`, `pageSize`, `routes`, `trips`, `vehicle`) so a refresh and the back button keep working. Server state is TanStack Query on top of `fetch` in `src/lib/mbtaClient.ts`.
+This is one page. Filter and pagination state live in the URL (`page`, `pageSize`, `routes`, `trips`, `vehicle`) so a refresh and the back button keep working. Server state is TanStack Query on top of `fetch` in `src/lib/mbtaClient.ts`, which reads its base URL from `VITE_MBTA_API_BASE`.
 
 ```
 URL  →  searchState  →  query keys
